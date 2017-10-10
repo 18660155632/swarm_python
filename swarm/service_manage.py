@@ -120,6 +120,9 @@ class ConnDocker:
             return 'global mode,do nothing'
 
     def list_host_ports(self):
+        '''
+        列出所有已经使用的端口，仅含swarm环境
+        '''
         host_used_ports = []
         def func(my_list):
             b = []
