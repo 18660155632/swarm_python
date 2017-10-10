@@ -1,0 +1,42 @@
+{
+  "image":"",
+  "command":[],
+  "options": {
+    "args": [],
+    "constraints": [],
+    "container_labels": {},
+    "endpoint_spec": {
+      "mode": "",
+      "ports": {}
+    },
+    "env": [],
+    "hostname": "",
+    "labels": {},
+    "log_driver": "",
+    "log_driver_options": {},
+    "mode": {
+      "mode": "",
+      "replicas": 1
+    },
+    "mounts": [],
+    "name": "",
+    "networks": [],
+    "resources": {
+      "cpu_limit": 0,
+      "mem_limit": 0,
+      "cpu_reservation": 0,
+      "mem_reservation": 0
+    },
+    "restart_policy": {
+      "condition": "",
+      "delay": 0,
+      "max_attempts": 0,
+      "window": 0
+    },
+    "secrets": [],
+    "stop_grace_period": 0,
+    "user": "",
+    "workdir": "",
+    "tty": 0
+  }
+}

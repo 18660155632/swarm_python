@@ -1,0 +1,10 @@
+{
+    "name":"1.10",
+    "author":"",
+    "created":"2017-09-13T17:14:40.335507406Z",
+    "signature":null,
+    "architecture":"amd64",
+    "docker_version":"17.06.2-ce",
+    "os":"linux",
+    "digest":"sha256:a3209210b2c0caeafaca2c22f2f38ad18931861627ed15e863d929841572c07e"
+}

@@ -1,0 +1,14 @@
+{
+  "dockerhub":{
+    "project_repo":"centos",
+    "tag":"6.9"
+  },
+  "harbor":{
+    "harbor_host":"172.16.3.61",
+    "harbor_project":"library",
+    "harbor_repo":"centos",
+    "harbor_tag":"6.9"
+    }
+}
+
+#project_repo 格式可以是"centos",可以是"sameersbn/redmine",也可以是"172.16.3.61:80/library/centos"
