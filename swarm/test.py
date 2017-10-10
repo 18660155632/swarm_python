@@ -24,13 +24,13 @@
 #     b = tuple(a)
 #     print b
 
-a = [1,2]
-b = a
-print a
-print id(a)
-
-a += [3,4]
-print a
-print b
-print id(a)
-print id(b)
+# a = [1,2]
+# b = a
+# print a
+# print id(a)
+#
+# a += [3,4]
+# print a
+# print b
+# print id(a)
+# print id(b)
