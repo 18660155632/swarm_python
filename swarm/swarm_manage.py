@@ -158,6 +158,13 @@ class ConnDocker:
                 pass
         return func(host_used_ports)
 
+    def node_id_2_name(self,node_id):
+        '''
+        根据node id得到node name
+        '''
+        swarm_node = self.docker_client.nodes.get(node_id)
+        return swarm_node.attrs['Description']['Hostname']
+
 
 
 
@@ -169,28 +176,29 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print a.list_service_id_name()
-    # print json.dumps(a.list_tasks('tomcat7'))
+    print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
     # print a.list_service_id_name()
-    # print a.remove_service('test2')
-    # image = 'tomcat:latest'
-    ajson = {
-        'iamge':'tomcat:latest',
-        'options':
-            {
-            'name':'tomcat3',
-            'labels': {'role_project': 'wms'},
-            'networks':['testoverlay'],
-            'mode': {
-                'mode': 'replicated',
-                'replicas':2
-            },
-            'endpoint_spec': {
-                'mode': 'vip',
-                'ports': {8893:8080}
-            }
-        }
-    }
+    # # print json.dumps(a.list_tasks('tomcat7'))
+    # # print a.list_service_id_name()
+    # # print a.remove_service('test2')
+    # # image = 'tomcat:latest'
+    # ajson = {
+    #     'iamge':'tomcat:latest',
+    #     'options':
+    #         {
+    #         'name':'tomcat3',
+    #         'labels': {'role_project': 'wms'},
+    #         'networks':['testoverlay'],
+    #         'mode': {
+    #             'mode': 'replicated',
+    #             'replicas':2
+    #         },
+    #         'endpoint_spec': {
+    #             'mode': 'vip',
+    #             'ports': {8893:8080}
+    #         }
+    #     }
+    # }
     # print a.create_service(ajson)
     # print a.list_service_id_name()
     # #print json.dumps([x.attrs for x in a.services])
