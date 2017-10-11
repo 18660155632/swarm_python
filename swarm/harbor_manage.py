@@ -12,6 +12,7 @@ class ConnHabor:
     '''
     def __init__(self,harbor_host,harbor_user,harbor_password,image_host):
         self.harbor_host_baseapi = 'http://%s/api' %(harbor_host)
+        self.harbor_host = harbor_host
         self.harbor_user = harbor_user
         self.harbor_password = harbor_password
         self.image_host_url = 'tcp://%s:2375' % (image_host)
@@ -35,7 +36,7 @@ class ConnHabor:
             hub_2_harbor_def = json.loads(a_json)
         hub_repo_name = hub_2_harbor_def['dockerhub']['project_repo']
         hub_tag = hub_2_harbor_def['dockerhub']['tag']
-        harbor_host = hub_2_harbor_def['harbor']['harbor_host']
+        harbor_host = self.harbor_host
         harbor_project = hub_2_harbor_def['harbor']['harbor_project']
         harbor_repo = hub_2_harbor_def['harbor']['harbor_repo']
         harbor_tag = hub_2_harbor_def['harbor']['harbor_tag']
@@ -89,12 +90,19 @@ class ConnHabor:
     def harbor_list_projects(self, project_key='project_id'):
         # 获得项目名的列表，并且根据project_key（默认project_id）得到相应的属性，
         # 返回类似：[{u'k8s': 2}, {u'library': 1}]
-        project_result = []
+        # project_result = []
+        # list_project_url = '%s/projects' % (self.harbor_host_baseapi)
+        # request = self.harbor_session.get(list_project_url)
+        # harbor_projects = request.json()
+        # for project in harbor_projects:
+        #     project_result.append({project['name']: project[project_key]})
+        # return project_result
+        project_result = {}
         list_project_url = '%s/projects' %(self.harbor_host_baseapi)
         request = self.harbor_session.get(list_project_url)
         harbor_projects = request.json()
         for project in harbor_projects:
-            project_result.append({project['name']: project[project_key]})
+            project_result[project['name']] = project[project_key]
         return project_result
 
     def harbor_list_repos(self,project_id,repo_key = 'name'):

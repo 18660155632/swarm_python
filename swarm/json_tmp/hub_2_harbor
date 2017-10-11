@@ -4,7 +4,6 @@
     "tag":"6.9"
   },
   "harbor":{
-    "harbor_host":"172.16.3.61",
     "harbor_project":"library",
     "harbor_repo":"centos",
     "harbor_tag":"6.9"

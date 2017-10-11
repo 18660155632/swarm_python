@@ -3,6 +3,7 @@ import json
 import docker
 import requests
 from tools.shell_cmd import create_process
+from collections import defaultdict
 
 class ConnDocker:
 
@@ -24,9 +25,9 @@ class ConnDocker:
         字典样本：{u'g6qisz1kichs4b6n37mbqh1p7': u'tomcat8'}
         其实在操作service的操作中，使用过name和id是等效的，可以只输出其中一种。
         '''
-        service_id_name = []
+        service_id_name = {}
         for service in self.services:
-            service_id_name.append({service.id:service.name})
+            service_id_name.update({service.id:service.name})
         return service_id_name
 
     def list_service_attrs(self,service_name = None):
@@ -42,6 +43,23 @@ class ConnDocker:
             service = self.docker_client.services.get(service_name)
             service_attrs = {'service_name':service.name,'service_attrs':service.attrs}
             return service_attrs
+
+    def list_service_name_role(self,role = None):
+        '''
+        查找用户所在role创建的service，如果是admin用户可以看到所有
+        输出格式如下{u'oms': [u'tomcat1', u'tomcat2'], u'wms': [u'tomcat3']}
+        '''
+        services_attrs = self.list_service_attrs()
+        service_name_role = [{x['service_attrs']['Spec']['Labels']['role_project']:x['service_name']} for x in services_attrs]
+        dic = {}
+        for _ in service_name_role:
+            for k,v in _.items():
+                dic.setdefault(k,[]).append(v)
+        if role != None:
+            return {role:dic[role]}
+        else:
+            return dic
+
 
     def list_tasks(self,service_id):
         '''
@@ -151,30 +169,34 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print json.dumps(a.list_tasks('tomcat7'))
+    print a.list_service_id_name()
+    # print json.dumps(a.list_tasks('tomcat7'))
     # print a.list_service_id_name()
     # print a.remove_service('test2')
     # image = 'tomcat:latest'
-    # ajson = {
-    #     'iamge':'tomcat:latest',
-    #     'options':
-    #         {
-    #         'name':'tomcat8',
-    #         'labels': {'project': 'oms'},
-    #         'networks':['testoverlay'],
-    #         'mode': {
-    #             'mode': 'replicated',
-    #             'replicas':2
-    #         },
-    #         'endpoint_spec': {
-    #             'mode': 'vip',
-    #             'ports': {8898:8080}
-    #         }
-    #     }
-    # }
+    ajson = {
+        'iamge':'tomcat:latest',
+        'options':
+            {
+            'name':'tomcat3',
+            'labels': {'role_project': 'wms'},
+            'networks':['testoverlay'],
+            'mode': {
+                'mode': 'replicated',
+                'replicas':2
+            },
+            'endpoint_spec': {
+                'mode': 'vip',
+                'ports': {8893:8080}
+            }
+        }
+    }
     # print a.create_service(ajson)
+    # print a.list_service_id_name()
     # #print json.dumps([x.attrs for x in a.services])
     # # print a.scal_service('tomcat1',new_replicas = 1)
-    # print json.dumps(a.list_service_attrs('jrvgonrqbg'))
+    # print json.dumps(a.list_service_attrs('tomcat1'))
     # # print a.list_host_ports()
     # # print json.dumps(a.list_tasks('tomcat2'))
+    # for service in a.services:
+    #     a.remove_service(service.id)
