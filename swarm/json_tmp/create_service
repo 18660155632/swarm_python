@@ -40,3 +40,14 @@
     "tty": 0
   }
 }
+
+本版本只做注释部分的前端页面
+image 是必须的，通过三级下拉菜单选择私有库中的镜像
+command 不是必须的，
+args 不是必须的，
+endpoint_sepc mode，从下拉菜单选取，2个固定值：vip和dnsrr，默认是vip
+endpoint_sepc ports，只有使用vip时有效，字典中保存端口映射{ target_port: published_port } 或{ target_port: (published_port, protocol)我们先采用前一种格式
+labels，用“+”的方式？最终加入一条隐含记录{role_project:用户所在role}
+mode mode，从下拉菜单选取，2个固定值：replicated 或 global，默认是前者
+mode replicas，使用replicated时，副本数量
+networks 从下拉菜单选取1个值（虽然可以多选，但当前只做单选）当前可选值只有1个testoverlay，以后从network list方法获取选择值
