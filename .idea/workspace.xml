@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08007e9b-f8ff-451f-a4ee-b7d98f8ff88e" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/create_HG.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/create_host.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/delete_HG.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/delete_host.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/get_HG.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/get_host.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_api/get_token.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swarm/zabbix_manage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swarm/role_service_info.py" afterPath="$PROJECT_DIR$/swarm/role_service_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swarm/test.py" afterPath="$PROJECT_DIR$/swarm/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -644,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507715492454</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="实现了zabbix增删host group和host">
+      <created>1507896595263</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1507896595263</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -710,7 +707,8 @@
     <MESSAGE value="注释list_host_port" />
     <MESSAGE value="列出用户的服务、任务信息页面所需方法基本实现" />
     <MESSAGE value="增加了通过node id得到node name的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了通过node id得到node name的方法" />
+    <MESSAGE value="实现了zabbix增删host group和host" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了zabbix增删host group和host" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
