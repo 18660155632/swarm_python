@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "method": "hostgroup.get", "params": {"output": "extend"}, "auth": "%s", "id": 1}

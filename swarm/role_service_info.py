@@ -22,13 +22,13 @@ def get_service_info(role = None,):
             endpoint_port = [x['PublishedPort'] for x in service_attrs['service_attrs']['Endpoint']['Ports']]
             service_image = service_attrs['service_attrs']['Spec']['TaskTemplate']['ContainerSpec']['Image']
             task_info = [{'task_id':x['ID'],'container_id':x['Status']['ContainerStatus']['ContainerID'],
-                          'node_name':swarm_conn.node_id_2_name(x['NodeID']),'status':x['Status']['State']} for x in tasks_attrs]
+                          'node_name':swarm_conn.node_id_2_name(x['NodeID']),'status':x['Status']['State']}
+                         for x in tasks_attrs]
             service_task_info.append({'service_name':service_name,'endpoint_port':endpoint_port,'image':service_image,
                                       'task_info':task_info})
         return {role:service_task_info}
 
     else:
-        all_info = []
         return [get_service_info(y) for y in swarm_conn.list_service_name_role().keys()]
 
 def remove_service(service_name):

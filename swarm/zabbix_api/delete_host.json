@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","auth":"%s","method":"host.delete","params":["%s"],"id":1}
