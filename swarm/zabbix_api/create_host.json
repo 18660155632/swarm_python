@@ -1,1 +1,1 @@
-{"jsonrpc":"2.0","auth":"%s","method":"host.create","params":{"host":"%s","interfaces":[{"type": 1,"main": 1,"useip": 1,"ip": "127.0.0.1","dns": "","port": "10050"}],"groups":[{"groupid":"%s"}]},"id":1}
+{"jsonrpc":"2.0","auth":"%s","method":"host.create","params":{"host":"%s","interfaces":[{"type": 1,"main": 1,"useip": 1,"ip": "127.0.0.1","dns": "","port": "10050"}],"groups":[{"groupid":"%s"}],"templates":[{"templateid": "%s"}]},"id":1}

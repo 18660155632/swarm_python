@@ -165,6 +165,10 @@ class ConnDocker:
         swarm_node = self.docker_client.nodes.get(node_id)
         return swarm_node.attrs['Description']['Hostname']
 
+    def list_nodes(self,**kwargs):
+        swarm_nodes = self.docker_client.nodes.list(**kwargs)
+        return swarm_nodes
+
 
 
 
@@ -176,7 +180,8 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
+    print a.get_node_attrs()
+    # print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
     # print a.list_service_id_name()
     # # print json.dumps(a.list_tasks('tomcat7'))
     # # print a.list_service_id_name()

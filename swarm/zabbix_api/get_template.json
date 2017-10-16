@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","auth":"%s","method":"template.get","params":{"output":"extend","filter":{"host":["%s"]}},"id":1}
