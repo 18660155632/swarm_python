@@ -13,7 +13,9 @@ def get_service_info(role = None,):
     如果是admin用户，输出的是一个列表。列表的元素是各个非admin用户的字典。
     字典样本参考json_tmp/role_service_task
     '''
+    result = []
     if role != None:
+
         my_services_names = swarm_conn.list_service_name_role(role).values()[0]
         service_task_info = []
         for service_name in my_services_names:
@@ -26,10 +28,12 @@ def get_service_info(role = None,):
                          for x in tasks_attrs]
             service_task_info.append({'service_name':service_name,'endpoint_port':endpoint_port,'image':service_image,
                                       'task_info':task_info})
-        return {role:service_task_info}
-
+        # return {role:service_task_info}
+        role_info = {'project_name':role,'info':service_task_info}
+        result.append(role_info)
+        return result
     else:
-        return [get_service_info(y) for y in swarm_conn.list_service_name_role().keys()]
+        return [get_service_info(y)[0] for y in swarm_conn.list_service_name_role().keys()]
 
 def remove_service(service_name):
     '''
@@ -58,7 +62,7 @@ def list_service_task_attrs(service_name):
 
 if __name__ == '__main__':
      # a = get_service_info()
-     a = get_service_info('oms')
+     a = get_service_info()
      print json.dumps(a)
      # b = scale_service('tomcat1',5)
      # print json.dumps(a)

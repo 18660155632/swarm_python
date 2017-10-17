@@ -1,58 +1,8 @@
 #one role
 
-{
-    "oms":[
-        {
-            "service_name":"tomcat1",
-            "endpoint_port":[
-                8891
-            ],
-            "task_info":[
-                {
-                    "node_id":"n7amqtf4su0vp4dqrre1bmv6c",
-                    "status":"running",
-                    "container_id":"9b3bf58c37f6a7f0ceab46445faf8020491e0d82bc16757697d87ddade72f20e",
-                    "task_id":"ls6bysi62mqtvkasj5hmdhwqt"
-                },
-                {
-                    "node_id":"3wkffin7n0so8cmm8hk7us693",
-                    "status":"running",
-                    "container_id":"ebf3cce2b654a8933b655754953e0d8098a554861a7fa5bcd7620425b507e8b6",
-                    "task_id":"zqq2mxcjb1oopeh2h0up1uftr"
-                }
-            ],
-            "image":"tomcat:latest"
-        },
-        {
-            "service_name":"tomcat2",
-            "endpoint_port":[
-                8892
-            ],
-            "task_info":[
-                {
-                    "node_id":"n7amqtf4su0vp4dqrre1bmv6c",
-                    "status":"running",
-                    "container_id":"e8fd5c2b12cebc1211ba67e8c4dfc0154f68ee5b0c5c463f9a4b2a9759f15bc8",
-                    "task_id":"2p96n69ixd2beczp5pi3h000w"
-                },
-                {
-                    "node_id":"w3xtx1bj07ae5fg09srkm94ly",
-                    "status":"running",
-                    "container_id":"57bfd435e7de64fc1f5752b590e8bd509bb8ca16a75bcbd53a28d5c7df98b884",
-                    "task_id":"nnpuj8e1c1xpija1fpx5qkwy0"
-                }
-            ],
-            "image":"tomcat:latest"
-        }
-    ]
-}
-
-
-#all roles#########################################
-
 [
     {
-        "oms":[
+        "info":[
             {
                 "service_name":"tomcat1",
                 "endpoint_port":[
@@ -60,16 +10,34 @@
                 ],
                 "task_info":[
                     {
-                        "node_id":"n7amqtf4su0vp4dqrre1bmv6c",
                         "status":"running",
-                        "container_id":"9b3bf58c37f6a7f0ceab46445faf8020491e0d82bc16757697d87ddade72f20e",
-                        "task_id":"ls6bysi62mqtvkasj5hmdhwqt"
+                        "container_id":"4ee8db6f795d365651ac0fd98f1e3277a4c6d22cd49f8db1becda130c622147a",
+                        "task_id":"fv4tnrcnlzaiad78fvom29jnd",
+                        "node_name":"as-172-16-1-115.handu.local"
                     },
                     {
-                        "node_id":"3wkffin7n0so8cmm8hk7us693",
+                        "status":"running",
+                        "container_id":"46d77ac6ac16204f8351352687019312184d3e1a98e77e0f83d950b323144fe4",
+                        "task_id":"l9jtg6vw49z6z03vwij1nxf70",
+                        "node_name":"as-172-16-1-114.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"9b3bf58c37f6a7f0ceab46445faf8020491e0d82bc16757697d87ddade72f20e",
+                        "task_id":"ls6bysi62mqtvkasj5hmdhwqt",
+                        "node_name":"as-172-16-1-115.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"0755d5265457f3064067478b7efac158c53f0647623d5d456fb27b9021670da1",
+                        "task_id":"plrdprvi9fttjzub7a4hyionq",
+                        "node_name":"as-172-16-1-116.handu.local"
+                    },
+                    {
                         "status":"running",
                         "container_id":"ebf3cce2b654a8933b655754953e0d8098a554861a7fa5bcd7620425b507e8b6",
-                        "task_id":"zqq2mxcjb1oopeh2h0up1uftr"
+                        "task_id":"zqq2mxcjb1oopeh2h0up1uftr",
+                        "node_name":"as-172-16-1-114.handu.local"
                     }
                 ],
                 "image":"tomcat:latest"
@@ -81,24 +49,97 @@
                 ],
                 "task_info":[
                     {
-                        "node_id":"n7amqtf4su0vp4dqrre1bmv6c",
                         "status":"running",
                         "container_id":"e8fd5c2b12cebc1211ba67e8c4dfc0154f68ee5b0c5c463f9a4b2a9759f15bc8",
-                        "task_id":"2p96n69ixd2beczp5pi3h000w"
+                        "task_id":"2p96n69ixd2beczp5pi3h000w",
+                        "node_name":"as-172-16-1-115.handu.local"
                     },
                     {
-                        "node_id":"w3xtx1bj07ae5fg09srkm94ly",
                         "status":"running",
                         "container_id":"57bfd435e7de64fc1f5752b590e8bd509bb8ca16a75bcbd53a28d5c7df98b884",
-                        "task_id":"nnpuj8e1c1xpija1fpx5qkwy0"
+                        "task_id":"nnpuj8e1c1xpija1fpx5qkwy0",
+                        "node_name":"as-172-16-1-116.handu.local"
                     }
                 ],
                 "image":"tomcat:latest"
             }
-        ]
+        ],
+        "project_name":"oms"
+    }
+]
+
+
+#all roles#########################################
+
+
+[
+    {
+        "info":[
+            {
+                "service_name":"tomcat1",
+                "endpoint_port":[
+                    8891
+                ],
+                "task_info":[
+                    {
+                        "status":"running",
+                        "container_id":"4ee8db6f795d365651ac0fd98f1e3277a4c6d22cd49f8db1becda130c622147a",
+                        "task_id":"fv4tnrcnlzaiad78fvom29jnd",
+                        "node_name":"as-172-16-1-115.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"46d77ac6ac16204f8351352687019312184d3e1a98e77e0f83d950b323144fe4",
+                        "task_id":"l9jtg6vw49z6z03vwij1nxf70",
+                        "node_name":"as-172-16-1-114.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"9b3bf58c37f6a7f0ceab46445faf8020491e0d82bc16757697d87ddade72f20e",
+                        "task_id":"ls6bysi62mqtvkasj5hmdhwqt",
+                        "node_name":"as-172-16-1-115.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"0755d5265457f3064067478b7efac158c53f0647623d5d456fb27b9021670da1",
+                        "task_id":"plrdprvi9fttjzub7a4hyionq",
+                        "node_name":"as-172-16-1-116.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"ebf3cce2b654a8933b655754953e0d8098a554861a7fa5bcd7620425b507e8b6",
+                        "task_id":"zqq2mxcjb1oopeh2h0up1uftr",
+                        "node_name":"as-172-16-1-114.handu.local"
+                    }
+                ],
+                "image":"tomcat:latest"
+            },
+            {
+                "service_name":"tomcat2",
+                "endpoint_port":[
+                    8892
+                ],
+                "task_info":[
+                    {
+                        "status":"running",
+                        "container_id":"e8fd5c2b12cebc1211ba67e8c4dfc0154f68ee5b0c5c463f9a4b2a9759f15bc8",
+                        "task_id":"2p96n69ixd2beczp5pi3h000w",
+                        "node_name":"as-172-16-1-115.handu.local"
+                    },
+                    {
+                        "status":"running",
+                        "container_id":"57bfd435e7de64fc1f5752b590e8bd509bb8ca16a75bcbd53a28d5c7df98b884",
+                        "task_id":"nnpuj8e1c1xpija1fpx5qkwy0",
+                        "node_name":"as-172-16-1-116.handu.local"
+                    }
+                ],
+                "image":"tomcat:latest"
+            }
+        ],
+        "project_name":"oms"
     },
     {
-        "wms":[
+        "info":[
             {
                 "service_name":"tomcat3",
                 "endpoint_port":[
@@ -106,21 +147,21 @@
                 ],
                 "task_info":[
                     {
-                        "node_id":"3wkffin7n0so8cmm8hk7us693",
                         "status":"running",
                         "container_id":"70774bd6bbaf2f74f7a9128362136184a2346cdbc028abdc6540eb542f7afa65",
-                        "task_id":"29d7osqajja382eobe7ai4yay"
+                        "task_id":"29d7osqajja382eobe7ai4yay",
+                        "node_name":"as-172-16-1-114.handu.local"
                     },
                     {
-                        "node_id":"w3xtx1bj07ae5fg09srkm94ly",
                         "status":"running",
                         "container_id":"2748fcad40b72ef82e32630060e285e2a98ed0621cf5810368bf0c728f45bf0d",
-                        "task_id":"3z5twqtp2307v3nshl362qps2"
+                        "task_id":"3z5twqtp2307v3nshl362qps2",
+                        "node_name":"as-172-16-1-116.handu.local"
                     }
                 ],
                 "image":"tomcat:latest"
             }
-        ]
+        ],
+        "project_name":"wms"
     }
 ]
-
