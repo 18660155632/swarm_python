@@ -26,7 +26,8 @@ class ConnDocker:
         其实在操作service的操作中，使用过name和id是等效的，可以只输出其中一种。
         '''
         service_id_name = {}
-        for service in self.services:
+        # for service in self.services:
+        for service in self.docker_client.services.list():
             service_id_name.update({service.id:service.name})
         return service_id_name
 
@@ -37,7 +38,8 @@ class ConnDocker:
         用api和cmd创建的服务，其属性输出格式不一样，本阶段建议不要深度解析
         '''
         if service_name is None:
-            service_attrs = [{'service_name':x.name,'service_attrs':x.attrs} for x in self.services]
+            # service_attrs = [{'service_name':x.name,'service_attrs':x.attrs} for x in self.services]
+            service_attrs = [{'service_name': x.name, 'service_attrs': x.attrs} for x in self.docker_client.services.list()]
             return service_attrs
         else:
             service = self.docker_client.services.get(service_name)
@@ -50,6 +52,7 @@ class ConnDocker:
         输出格式如下{u'oms': [u'tomcat1', u'tomcat2'], u'wms': [u'tomcat3']}
         '''
         services_attrs = self.list_service_attrs()
+        print json.dumps(services_attrs)
         service_name_role = [{x['service_attrs']['Spec']['Labels']['role_project']:x['service_name']} for x in services_attrs]
         dic = {}
         for _ in service_name_role:
@@ -180,7 +183,7 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print a.get_node_attrs()
+    print a.list_service_name_role()
     # print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
     # print a.list_service_id_name()
     # # print json.dumps(a.list_tasks('tomcat7'))
