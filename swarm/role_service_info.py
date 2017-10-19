@@ -51,18 +51,33 @@ def list_service_all_attrs(service_name):
     '''
     不解释:)
     '''
-    swarm_conn.list_service_attrs(service_name)
+    return swarm_conn.list_service_attrs(service_name)
 
 def list_service_task_attrs(service_name):
     '''
     不解释:)
     '''
-    swarm_conn.list_tasks(service_name)
+    return swarm_conn.list_tasks(service_name)
+
+def list_all_ports():
+    '''
+    获得所有已经在用端口
+    '''
+    return swarm_conn.list_host_ports()
+
+
+def list_all_service_names():
+    '''
+    获得所有已经在用服务名
+    '''
+    return swarm_conn.list_service_id_name().values()
 
 
 if __name__ == '__main__':
      # a = get_service_info()
-     a = get_service_info()
-     print json.dumps(a)
+     # a = get_service_info()
+     # print json.dumps(a)
      # b = scale_service('tomcat1',5)
      # print json.dumps(a)
+     a = list_all_service_names()
+     print a

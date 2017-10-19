@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08007e9b-f8ff-451f-a4ee-b7d98f8ff88e" name="默认的" comment="">
+    <list default="true" id="08007e9b-f8ff-451f-a4ee-b7d98f8ff88e" name="默认的" comment="修改一个bug 初始化docker连接时，初始化属性self.service">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swarm/role_service_info.py" afterPath="$PROJECT_DIR$/swarm/role_service_info.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swarm/swarm_manage.py" afterPath="$PROJECT_DIR$/swarm/swarm_manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +17,11 @@
     <SUITE FILE_PATH="coverage/docker$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1507884279717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
     <SUITE FILE_PATH="coverage/docker$use_zabbix.coverage" NAME="use_zabbix Coverage Results" MODIFIED="1507984495299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
     <SUITE FILE_PATH="coverage/docker$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1507700902457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
-    <SUITE FILE_PATH="coverage/docker$role_service_info.coverage" NAME="role_service_info Coverage Results" MODIFIED="1508315534955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
+    <SUITE FILE_PATH="coverage/docker$role_service_info.coverage" NAME="role_service_info Coverage Results" MODIFIED="1508393987948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
     <SUITE FILE_PATH="coverage/docker$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1506569841672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/docker$test.coverage" NAME="test Coverage Results" MODIFIED="1507275444160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/docker$create_service.coverage" NAME="create_service Coverage Results" MODIFIED="1506581015063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
-    <SUITE FILE_PATH="coverage/docker$service_manage__1_.coverage" NAME="service_manage (1) Coverage Results" MODIFIED="1508315486891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
+    <SUITE FILE_PATH="coverage/docker$service_manage__1_.coverage" NAME="service_manage (1) Coverage Results" MODIFIED="1508391855426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
     <SUITE FILE_PATH="coverage/docker$scale_service.coverage" NAME="scale_service Coverage Results" MODIFIED="1506581737135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/docker$zabbix_manage.coverage" NAME="zabbix_manage Coverage Results" MODIFIED="1507958209776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/swarm" />
     <SUITE FILE_PATH="coverage/docker$manage_harbor.coverage" NAME="manage_harbor Coverage Results" MODIFIED="1506834550550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
@@ -43,24 +44,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="swarm_manage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="swarm_manage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm/swarm_manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#14#25#0" expanded="true" />
-                <element signature="e#2687#2857#0" expanded="false" />
-                <element signature="e#5257#5884#0" expanded="false" />
+                <element signature="e#2689#2859#0" expanded="false" />
+                <element signature="e#5985#6147#0" expanded="false" />
+                <element signature="e#6192#6272#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="role_service_info.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="role_service_info.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/swarm/role_service_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#14#49#0" expanded="true" />
@@ -212,9 +214,9 @@
         <option value="$PROJECT_DIR$/swarm/json_tmp/create_service" />
         <option value="$PROJECT_DIR$/swarm/zabbix_manage.py" />
         <option value="$PROJECT_DIR$/swarm/use_zabbix.py" />
-        <option value="$PROJECT_DIR$/swarm/role_service_info.py" />
         <option value="$PROJECT_DIR$/swarm/json_tmp/role_service_task" />
         <option value="$PROJECT_DIR$/swarm/swarm_manage.py" />
+        <option value="$PROJECT_DIR$/swarm/role_service_info.py" />
       </list>
     </option>
   </component>
@@ -248,47 +250,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="External Dependencies">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="/">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".PyCharm2017.1">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="system">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="python_stubs">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="-1247972723">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Crypto">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
@@ -333,7 +298,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -702,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508213205494</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="修改一个bug 初始化docker连接时，初始化属性self.services不再被使用">
+      <created>1508315666857</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1508315666857</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -716,8 +687,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17409766" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -771,7 +742,8 @@
     <MESSAGE value="实现了zabbix增删host group和host" />
     <MESSAGE value="完善zabbix监控，以及各种注释&#10;这是进行服务创建页面制作前的最后一次后端代码提交" />
     <MESSAGE value="按小伙伴的要求，修改了role_service_task输出json的格式" />
-    <option name="LAST_COMMIT_MESSAGE" value="按小伙伴的要求，修改了role_service_task输出json的格式" />
+    <MESSAGE value="修改一个bug 初始化docker连接时，初始化属性self.services不再被使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一个bug 初始化docker连接时，初始化属性self.services不再被使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1067,24 +1039,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm/role_service_info.py">
+    <entry file="file://$PROJECT_DIR$/swarm/swarm_manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#49#0" expanded="true" />
+            <element signature="e#14#25#0" expanded="true" />
+            <element signature="e#2689#2859#0" expanded="false" />
+            <element signature="e#5985#6147#0" expanded="false" />
+            <element signature="e#6192#6272#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm/swarm_manage.py">
+    <entry file="file://$PROJECT_DIR$/swarm/role_service_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#25#0" expanded="true" />
-            <element signature="e#2687#2857#0" expanded="false" />
-            <element signature="e#5257#5884#0" expanded="false" />
+            <element signature="e#14#49#0" expanded="true" />
           </folding>
         </state>
       </provider>

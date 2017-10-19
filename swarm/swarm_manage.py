@@ -16,7 +16,7 @@ class ConnDocker:
         self.host_url = 'tcp://%s:2375' %(docker_host)
         self.docker_client = docker.DockerClient(base_url = self.host_url)
         self.docker_api_client = docker.APIClient(base_url = self.host_url)
-        self.services = self.docker_client.services.list()
+        # self.services = self.docker_client.services.list()
 
 
     def list_service_id_name(self):
@@ -151,7 +151,7 @@ class ConnDocker:
                 for d in c:
                     b.append(d)
             return b
-        for service in self.services:
+        for service in self.docker_client.services.list():
             try:
                 # ports_info = service.attrs['Spec']['EndpointSpec']['Ports']
                 ports_info = service.attrs['Endpoint']['Ports']
@@ -159,7 +159,8 @@ class ConnDocker:
                 host_used_ports.append(used_ports)
             except:
                 pass
-        return func(host_used_ports)
+        all_ports = func(host_used_ports)
+        return all_ports
 
     def node_id_2_name(self,node_id):
         '''
@@ -183,7 +184,7 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print a.list_service_name_role()
+    print a.list_host_ports()
     # print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
     # print a.list_service_id_name()
     # # print json.dumps(a.list_tasks('tomcat7'))
