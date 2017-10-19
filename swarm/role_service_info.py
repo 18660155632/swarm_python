@@ -13,7 +13,6 @@ def get_service_info(role = None,):
     如果是admin用户，输出的是一个列表。列表的元素是各个非admin用户的字典。
     字典样本参考json_tmp/role_service_task
     '''
-    result = []
     if role != None:
 
         my_services_names = swarm_conn.list_service_name_role(role).values()[0]
@@ -43,10 +42,8 @@ def get_service_info(role = None,):
 
             service_task_info.append({'service_name':service_name,'endpoint_port':endpoint_port,'image':service_image,
                                       'task_info':task_info})
-        # return {role:service_task_info}
-        role_info = {'project_name':role,'info':service_task_info}
-        result.append(role_info)
-        return result
+
+        return [{'project_name':role,'info':service_task_info}]
     else:
         return [get_service_info(y)[0] for y in swarm_conn.list_service_name_role().keys()]
 

@@ -91,7 +91,9 @@ class ConnZbx:
         for service in self.get_all_services().values():
             tasks = self.swarm_conn.list_tasks(service)
             containers += {x['Status']['ContainerStatus']['ContainerID'][:12]:self.get_all_HGs()[service]
-                               for x in tasks}.items()
+                               for x in tasks
+                               if x['Status']['State'] == 'running'
+                          }.items()
         self.all_containers = dict(containers)
         return self.all_containers
 

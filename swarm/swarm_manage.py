@@ -120,13 +120,13 @@ class ConnDocker:
                 pass
             elif k == 'update_config':
                 pass
-        # new_service = self.docker_client.services.create(image, command=None, **service_def['options'])
-        # print new_service
-        try:
-            new_service = self.docker_client.services.create(image,command = None,**service_def['options'])
-            return new_service
-        except:
-            return 'service create failed'
+        new_service = self.docker_client.services.create(image, command=None, **service_def['options'])
+        print new_service
+        # try:
+        #     new_service = self.docker_client.services.create(image,command = None,**service_def['options'])
+        #     return new_service
+        # except:
+        #     return 'service create failed'
 
     def scal_service(self,service_id,new_replicas = 1):
         '''
@@ -197,10 +197,10 @@ if __name__ == '__main__':
     # # print a.remove_service('test2')
     # # image = 'tomcat:latest'
     ajson = {
-        'image':'nginx:latest',
+        'image':'172.16.3.61:80/k8s/nginx:1011',
         'options':
             {
-            'name':'web1',
+            'name':'web2',
             'labels': {'role_project': 'web'},
             'networks':['testoverlay'],
             'mode': {
@@ -209,18 +209,18 @@ if __name__ == '__main__':
             },
             'endpoint_spec': {
                 'mode': 'vip',
-                'ports': {800:80}
+                'ports': {802:80}
             },
             "resources": {
-                "cpu_limit": 0,
-                "mem_limit": 0,
+                "cpu_limit": 500000000,
+                "mem_limit": 1024000000,
                 "cpu_reservation": 0,
                 "mem_reservation": 0
             }
         }
     }
     print a.create_service(ajson)
-    print json.dumps(a.list_service_attrs('web1'))
+    print json.dumps(a.list_service_attrs('web2'))
     # print a.list_service_id_name()
     # #print json.dumps([x.attrs for x in a.services])
     # # print a.scal_service('tomcat1',new_replicas = 1)
