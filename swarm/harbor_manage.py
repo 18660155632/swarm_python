@@ -157,26 +157,29 @@ if __name__ == '__main__':
     image_host = '172.16.1.111'
 
     a = ConnHabor(host,user,password,image_host)
+    # a.harbor_del_tag()
 
     a_json = {
         "dockerhub": {
             "project_repo": "centos",
-            "tag": "7"
+            "tag": "6"
         },
         "harbor": {
             "harbor_host": "172.16.3.61",
-            "harbor_project": "library",
+            "harbor_project": "k8s",
             "harbor_repo": "centos",
-            "harbor_tag": "7"
+            "harbor_tag": "6"
         }
 
-           }
+    }
+
 
     print a.hub_2_harbor(a_json)
-    print a.harbor_list_projects()
-    print a.harbor_list_repos(1)
-    print a.harbor_list_tags('library/centos')
-    # print a.harbor_del_tag('library/centos','7')
-    print a.harbor_get_volumes_info()
-    print a.harbor_get_system_info()
-    print a.harbor_del_repo('library/centos')
+    # print a.harbor_list_projects()
+    # print a.harbor_list_repos(2)
+    # print a.harbor_list_tags('k8s/centos')
+    # print a.harbor_del_tag('k8s/centos','6')
+    # print a.harbor_list_tags('k8s/ubuntu')
+    # print a.harbor_get_volumes_info()
+    # print a.harbor_get_system_info()
+    # print a.harbor_del_repo('library/centos')

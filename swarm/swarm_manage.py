@@ -52,7 +52,7 @@ class ConnDocker:
         输出格式如下{u'oms': [u'tomcat1', u'tomcat2'], u'wms': [u'tomcat3']}
         '''
         services_attrs = self.list_service_attrs()
-        print json.dumps(services_attrs)
+        # print json.dumps(services_attrs)
         service_name_role = [{x['service_attrs']['Spec']['Labels']['role_project']:x['service_name']} for x in services_attrs]
         dic = {}
         for _ in service_name_role:
@@ -91,7 +91,7 @@ class ConnDocker:
             service_def = def_json
         else:
             service_def = json.loads(def_json)
-        image = service_def['iamge']
+        image = service_def['image']
         if 'command' in service_def.keys():
             command = service_def['command']
         else:
@@ -112,11 +112,16 @@ class ConnDocker:
                 def_mode = docker.types.ServiceMode(v['mode'],replicas = mode_replicas)
                 service_def['options'][k] = def_mode
             elif k == 'resources':
-                pass
+                def_resources = docker.types.Resources(**v)
+                # print def_resources
+                service_def['options'][k] = def_resources
+                # print json.dumps(service_def['options'])
             elif k == 'restart_policy':
                 pass
             elif k == 'update_config':
                 pass
+        # new_service = self.docker_client.services.create(image, command=None, **service_def['options'])
+        # print new_service
         try:
             new_service = self.docker_client.services.create(image,command = None,**service_def['options'])
             return new_service
@@ -184,31 +189,38 @@ class ConnDocker:
 if __name__ == '__main__':
     host = '172.16.1.111'
     a = ConnDocker(host)
-    print a.list_host_ports()
+    # print a.list_host_ports()
     # print a.node_id_2_name('n7amqtf4su0vp4dqrre1bmv6c')
     # print a.list_service_id_name()
     # # print json.dumps(a.list_tasks('tomcat7'))
     # # print a.list_service_id_name()
     # # print a.remove_service('test2')
     # # image = 'tomcat:latest'
-    # ajson = {
-    #     'iamge':'tomcat:latest',
-    #     'options':
-    #         {
-    #         'name':'tomcat3',
-    #         'labels': {'role_project': 'wms'},
-    #         'networks':['testoverlay'],
-    #         'mode': {
-    #             'mode': 'replicated',
-    #             'replicas':2
-    #         },
-    #         'endpoint_spec': {
-    #             'mode': 'vip',
-    #             'ports': {8893:8080}
-    #         }
-    #     }
-    # }
-    # print a.create_service(ajson)
+    ajson = {
+        'image':'nginx:latest',
+        'options':
+            {
+            'name':'web1',
+            'labels': {'role_project': 'web'},
+            'networks':['testoverlay'],
+            'mode': {
+                'mode': 'replicated',
+                'replicas':2
+            },
+            'endpoint_spec': {
+                'mode': 'vip',
+                'ports': {800:80}
+            },
+            "resources": {
+                "cpu_limit": 0,
+                "mem_limit": 0,
+                "cpu_reservation": 0,
+                "mem_reservation": 0
+            }
+        }
+    }
+    print a.create_service(ajson)
+    print json.dumps(a.list_service_attrs('web1'))
     # print a.list_service_id_name()
     # #print json.dumps([x.attrs for x in a.services])
     # # print a.scal_service('tomcat1',new_replicas = 1)
