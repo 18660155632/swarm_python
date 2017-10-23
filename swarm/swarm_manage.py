@@ -197,10 +197,10 @@ if __name__ == '__main__':
     # # print a.remove_service('test2')
     # # image = 'tomcat:latest'
     ajson = {
-        'image':'172.16.3.61:80/k8s/nginx:1011',
+        'image':'172.16.3.61:80/k8s/nginx:10112',
         'options':
             {
-            'name':'web2',
+            'name':'web3',
             'labels': {'role_project': 'web'},
             'networks':['testoverlay'],
             'mode': {
@@ -209,7 +209,7 @@ if __name__ == '__main__':
             },
             'endpoint_spec': {
                 'mode': 'vip',
-                'ports': {802:80}
+                'ports': {803:80}
             },
             "resources": {
                 "cpu_limit": 500000000,

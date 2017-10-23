@@ -22,18 +22,29 @@ def get_service_info(role = None,):
             tasks_attrs = swarm_conn.list_tasks(service_name)
             endpoint_port = [x['PublishedPort'] for x in service_attrs['service_attrs']['Endpoint']['Ports']]
             service_image = service_attrs['service_attrs']['Spec']['TaskTemplate']['ContainerSpec']['Image']
+            task_info = []
             for _ in tasks_attrs:
-                task_info = []
+                # task_info = []
+
                 task_id = _['ID']
+                # try:
+                #     container_id = _['Status']['ContainerStatus']['ContainerID']
+                #     node_name = swarm_conn.node_id_2_name(_['NodeID'])
+                #     status = _['Status']['State']
+                # except:
+                #     container_id = 'ERROR'
+                #     node_name = 'ERROR'
+                #     status = 'ERROR'
                 try:
-                    container_id = _['Status']['ContainerStatus']['ContainerID']
-                    node_name = swarm_conn.node_id_2_name(_['NodeID'])
                     status = _['Status']['State']
                 except:
-                    container_id = 'ERROR'
-                    node_name = 'ERROR'
                     status = 'ERROR'
-                task_info.append({'task_id':task_id,'container_i':container_id,'node_name':node_name,'status':status})
+
+                if status == 'running':
+                    container_id = _['Status']['ContainerStatus']['ContainerID']
+                    node_name = swarm_conn.node_id_2_name(_['NodeID'])
+                    task_info.append({'task_id': task_id, 'container_id': container_id, 'node_name': node_name, 'status': status})
+                # task_info.append({'task_id':task_id,'container_id':container_id,'node_name':node_name,'status':status})
 
 
             # task_info = [{'task_id':x['ID'],'container_id':x['Status']['ContainerStatus']['ContainerID'],
